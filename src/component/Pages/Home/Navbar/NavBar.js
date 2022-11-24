@@ -6,6 +6,8 @@ const NavBar = () => {
     const menuBar = <>
         <Link className="btn btn-ghost" to='/'>Home</Link>
         <Link className="btn btn-ghost" to='/spareparts'>Spare Parts</Link>
+        <Link className="btn btn-ghost" to='/login'>Log In</Link>
+        <Link className="btn btn-ghost" to='/register'>SignUp</Link>
     </>
     return ( 
         <div>
