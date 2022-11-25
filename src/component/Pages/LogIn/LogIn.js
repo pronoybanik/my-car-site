@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import useToken from '../../hooks/useToken';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 
@@ -16,8 +18,26 @@ const LogIn = () => {
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/';
+    const [loginUserEmail, setLoginUserEmail] = useState('')
 
+    const [token] = useToken(loginUserEmail)
 
+    if (token) {
+        navigate(from, { replace: true })
+
+    }
+
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogle = () => {
+        googleLogin(provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+               
+            })
+            .catch(err => console.error(err))
+    }
 
     const handleLogin = data => {
         console.log(data);
@@ -27,7 +47,7 @@ const LogIn = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('Login successful')
-                navigate(from, { replace: true })
+                setLoginUserEmail(data.email)
                 // setLoginUSerEmail(data.email);
             })
             .catch(error => {
@@ -68,7 +88,7 @@ const LogIn = () => {
                     </div>
 
 
-                   
+
 
 
 
@@ -79,7 +99,7 @@ const LogIn = () => {
                 </form>
                 <p>New to Doctors Portal <Link className='text-secondary' to='/register'>Create a accounts</Link></p>
                 <div className="divider">OR</div>
-                <button className="btn btn-outline w-full">Google LogIn</button>
+                <button onClick={handleGoogle} className="btn btn-outline w-full">Google LogIn</button>
 
             </div>
 

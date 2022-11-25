@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
+import useToken from '../../hooks/useToken';
 
 
 
@@ -12,10 +13,15 @@ const SignUp = () => {
     const { createUser, updateUser, googleLogin } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signError, setSignError] = useState('');
-    // const [createdUserEmail, setCreatedUserEmail] = useState('')
     // const localion = useLocation()
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+
+    const [token] = useToken(createdUserEmail)
     const navigate = useNavigate()
 
+    if(token){
+        navigate('/')
+    }
 
 
     const provider = new GoogleAuthProvider();
@@ -25,6 +31,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+               
             })
             .catch(err => console.error(err))
     }
@@ -69,11 +76,12 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                navigate('/')
+                setCreatedUserEmail(email)
                 // setCreatedUserEmail(email)
 
             })
     }
+
 
     return (
         <div className='h-[600px] flex justify-center items-center'>
@@ -122,7 +130,7 @@ const SignUp = () => {
                         <select className="select select-bordered w-full max-w-xs"
                             {...register("field", { required: "Email Address is required" })}
                         >
-                            
+
                             <option>user</option>
                             <option>Byer</option>
                             <option>seller</option>
