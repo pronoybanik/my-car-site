@@ -11,7 +11,7 @@ const AllUsesrs = () => {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
 
-                }
+                } 
             });
             const data = await res.json()
             return data
