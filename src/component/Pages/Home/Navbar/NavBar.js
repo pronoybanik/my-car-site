@@ -15,13 +15,18 @@ const NavBar = () => {
     const menuBar = <>
         <Link className="btn btn-ghost" to='/'>Home</Link>
         <Link className="btn btn-ghost" to='/spareparts'>Spare Parts</Link>
-        <Link className="btn btn-ghost" to='/register'>SignUp</Link>
+
         {
             user?.email ?
                 <button className="btn btn-ghost" onClick={handelLogOut}>Log Out</button>
                 :
-                <Link className="btn btn-ghost" to='/login'>Log In</Link>
+                <>
+                    <Link className="btn btn-ghost" to='/login'>Log In</Link>
+                    <Link className="btn btn-ghost" to='/register'>SignUp</Link>
+                </>
         }
+
+        <Link className="btn btn-ghost" to='/dashboard'>Dash Board</Link>
 
     </>
     return (
@@ -47,10 +52,11 @@ const NavBar = () => {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Get started</a>
-                </div>
+
             </div>
+            <label  htmlFor="drawer-box" tabIndex={0} className="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </label>
         </div>
     );
 };

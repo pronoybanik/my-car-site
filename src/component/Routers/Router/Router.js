@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import DadhBoardLayOut from "../../Pages/DashBoards/DadhBoardLayOut/DadhBoardLayOut";
+import MyOrdare from "../../Pages/DashBoards/MyOrdare/MyOrdare";
 import Home from "../../Pages/Home/Home/Home";
 import Review from "../../Pages/Home/Review/Review";
 import SpareParts from "../../Pages/Home/SpareParts/SpareParts";
@@ -36,6 +38,16 @@ const router = createBrowserRouter([
             }
 
 
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRouter><DadhBoardLayOut></DadhBoardLayOut></PrivateRouter>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <MyOrdare></MyOrdare>
+            }
         ]
     }
 ])

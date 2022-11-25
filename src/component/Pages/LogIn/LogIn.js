@@ -19,7 +19,7 @@ const LogIn = () => {
 
 
 
-      const handleLogin = data => {
+    const handleLogin = data => {
         console.log(data);
         setLoginError('')
         signIn(data.email, data.password)
@@ -66,14 +66,33 @@ const LogIn = () => {
                         </label>
                         {errors.password && <p className='text-red-800'>{errors.password?.message}</p>}
                     </div>
+
+
+                    <div className="form-control ">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <select className="select select-bordered w-full max-w-xs">
+                            <option disabled selected>Who shot first?</option>
+                            <option>Han Solo</option>
+                            <option>Greedo</option>
+                        </select>
+
+                        {/* <input className='w-full' type="text"
+                            className="input input-bordered w-full max-w-xs" /> */}
+
+                    </div>
+
+
+
                     <div>
                         {loginError && <p className='text-red-600 my-2'>{loginError}</p>}
                     </div>
                     <input className='btn w-full' value='Log In' type="submit" />
                 </form>
-                <p>New to Doctors Portal <Link className='text-secondary' to='/signup'>Create a accounts</Link></p>
+                <p>New to Doctors Portal <Link className='text-secondary' to='/register'>Create a accounts</Link></p>
                 <div className="divider">OR</div>
-                <button  className="btn btn-outline w-full">Google LogIn</button>
+                <button className="btn btn-outline w-full">Google LogIn</button>
 
             </div>
 

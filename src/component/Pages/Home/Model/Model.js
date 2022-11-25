@@ -30,25 +30,47 @@ const Model = ({ carBooking }) => {
         fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
-                'context-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(list)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            form.reset('')
-            if (data.acknowledged) {
-                // setTreatment(null);
-                toast.success('Booking confirmed')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    // setTreatment(null);
+                    toast.success('Booking confirmed')
+                    // refetch()
+                    
+                }
+                else{
+                  toast.error(data.message)
+                }
+
+            })
+
+        // fetch('http://localhost:5000/bookings', {
+        //     method: 'POST',
+        //     headers: {
+        //         'context-type' : 'application/json'
+        //     },
+        //     body: JSON.stringify(list)
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data)
+        //     form.reset('')
+        //     if (data.acknowledged) {
+        //         // setTreatment(null);
+        //         toast.success('Booking confirmed')
                 
                 
-            }
-            else{
-              toast.error(data.message)
-            }
+        //     }
+        //     else{
+        //       toast.error(data.message)
+        //     }
              
-        })
+        // })
     }
 
 
