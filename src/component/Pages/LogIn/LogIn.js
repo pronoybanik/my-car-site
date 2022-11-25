@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 
 
@@ -25,6 +26,7 @@ const LogIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast.success('Login successful')
                 navigate(from, { replace: true })
                 // setLoginUSerEmail(data.email);
             })

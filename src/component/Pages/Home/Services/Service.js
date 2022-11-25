@@ -2,26 +2,27 @@ import React, { useEffect, useState } from 'react';
 import ServiceItem from './ServiceItem/ServiceItem';
 
 const Service = () => {
- const [services , setServices] = useState([])
+    const [services, setServices] = useState([])
 
-    useEffect(() =>{
+    useEffect(() => {
         fetch('http://localhost:5000/services')
-        .then(res =>res.json())
-        .then(data => setServices(data))
+            .then(res => res.json())
+            .then(data => setServices(data))
     }, [])
     return (
         <div>
-            
-            
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-            {
-                services.map(data =><ServiceItem
-                key={data._id}
-                data={data}
-                ></ServiceItem>)
-            }
+
+            <h2 className='text-3xl font-extrabold text-center my-20  text-sky-500'>Our Services</h2>
+
+            <div className='ml-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                {
+                    services?.map(data => <ServiceItem
+                        key={data._id}
+                        data={data}
+                    ></ServiceItem>)
+                }
             </div>
-            
+
         </div>
     );
 };

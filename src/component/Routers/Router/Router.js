@@ -5,6 +5,7 @@ import SpareParts from "../../Pages/Home/SpareParts/SpareParts";
 import LogIn from "../../Pages/LogIn/LogIn";
 import Main from "../../Pages/Main/Main";
 import SignUp from "../../Pages/SignUP/SignUp";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/reviews/:id', 
-                element: <Review></Review>,
+                element: <PrivateRouter><Review></Review></PrivateRouter>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
 
             },

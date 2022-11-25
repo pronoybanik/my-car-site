@@ -1,23 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Model from '../Model/Model';
+
 
 const Review = () => {
     const data = useLoaderData()
     const { image_url, title, location, sellprice, productuse, sellname, realprice } = data;
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/${services?.id}`)
-    //         .then(res => res.json())
-    //         .then(data => console.log(data))
-    // }, [services?.id])
+    const [carBooking, setCarBooking] = useState(null);
 
     return (
         <div>
-
+            <h1>page: {data.sellname} </h1>
             <div className="hero ">
                 <div className="hero-content flex-col lg:flex-row">
 
-                    <figure><img src={image_url} alt="Shoes" /></figure>
+                    <figure><img className='w-96' src={image_url} alt="Shoes" /></figure>
                     <div>
                         <h1 className="text-5xl font-bold">{title}</h1>
                         <br />
@@ -26,11 +24,19 @@ const Review = () => {
                         <h2>Uses: {productuse}</h2>
                         <h2>Market Price: BDT <strong>{realprice}</strong>  </h2>
                         <h2>selling Price: BDT <strong>{sellprice}</strong></h2>
+
+                        <label onClick={() => setCarBooking(data)} htmlFor="car-booking" className="btn mt-6">Booking</label>
+
                     </div>
-                    <button className="btn btn-primary">Get Started</button>
-                    <label htmlFor="modelId" className="btn">open modal</label>
                 </div>
             </div>
+
+            {
+                carBooking &&
+                <Model
+                    carBooking={carBooking}
+
+                ></Model>}
 
         </div>
     );

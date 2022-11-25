@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
-import toast  from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 
@@ -17,9 +17,33 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
-                setSignError('')
                 console.log(user);
-                toast.success('create user successfully')
+                setSignError('')
+
+                // const currentUser = {
+                //     email: user.email
+                // }
+
+                // fetch('http://localhost:5000/jwt', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(currentUser)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log(data);
+                //         localStorage.setItem('token', data.token)
+
+                //     })
+                // // form.reset('');
+                // toast.success("Register successful", {
+                //     position: "top-center",
+                //     theme: "light",
+                // });
+
+               
                 const userInfo = {
                     displayName: data.name
                 }
@@ -28,6 +52,7 @@ const SignUp = () => {
                         const user = result.user;
                         console.log(user);
                         // saveUser(data.name, data.email)
+
                     })
                     .catch(err => console.log(err))
 
@@ -38,7 +63,7 @@ const SignUp = () => {
 
             })
     }
-    
+
     return (
         <div className='h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
@@ -88,7 +113,7 @@ const SignUp = () => {
                 </form>
                 <p>Already have a account<Link className='text-secondary' to='/login'>Please Login</Link></p>
                 <div className="divider">OR</div>
-                <button  className="btn btn-outline w-full">Google LogIn</button>
+                <button className="btn btn-outline w-full">Google LogIn</button>
 
             </div>
 
