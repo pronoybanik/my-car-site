@@ -13,7 +13,7 @@ const ServiceItem = ({ data }) => {
                     <p className='font-semibold'>That Products are sale</p>
                     <div className="card-actions justify-center">
                         <Link to={`/reviews/${_id}`}>
-                            <button className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white mr-3y">Detail</button>
+                            <button className=" font-bold btn btn-primary bg-gradient-to-r from-primary to-secondary text-white mt-2">Detail</button>
                         </Link>
                     </div>
                 </div>

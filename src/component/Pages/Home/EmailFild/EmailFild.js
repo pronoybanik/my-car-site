@@ -25,7 +25,7 @@ const EmailFild = () => {
                     <textarea className="textarea textarea-bordered w-80 " placeholder="Bio"></textarea>
                 </div>
                 <div className='flex  items-center justify-center mt-4'>
-                <button className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white mr-3y">submit</button>
+                <button className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white font-bold">submit</button>
                 </div>
             </div>
 

@@ -28,6 +28,7 @@ const AddProduct = () => {
                         number: data.number,
                         location: data.location,
                         price: data.price,
+                        used:data.use,
                         photo: imgData.data.url
 
                     }
@@ -95,10 +96,23 @@ const AddProduct = () => {
                             </label>
                             <input type="text"
                                 {...register("location", {
-                                    required: "message",
+                                    required: "Add location",
                                 })}
                                 className="input input-bordered w-full max-w-xs" />
                             {errors.location && <p className='text-red-800'>{errors.location?.message}</p>}
+
+                        </div>
+
+                        <div className="form-control ">
+                            <label className="label">
+                                <span className="label-text font-medium">Product use</span>
+                            </label>
+                            <input type="text"
+                                {...register("use", {
+                                    required: "Add time",
+                                })}
+                                className="input input-bordered w-full max-w-xs" />
+                            {errors.price && <p className='text-red-800'>{errors.price?.message}</p>}
 
                         </div>
 
@@ -109,8 +123,8 @@ const AddProduct = () => {
                                 <span className="label-text font-medium">Price</span>
                             </label>
                             <input type="text"
-                                {...register("Price", {
-                                    required: "message",
+                                {...register("price", {
+                                    required: "Add price",
                                 })}
                                 className="input input-bordered w-full max-w-xs" />
                             {errors.price && <p className='text-red-800'>{errors.price?.message}</p>}
