@@ -132,7 +132,8 @@ const SignUp = () => {
                         >
 
                             <option>user</option>
-                            <option>Byer</option>
+                            <option>Admin</option>
+                            <option>Byes</option>
                             <option>seller</option>
                         </select>
 

@@ -17,7 +17,7 @@ const SpareParts = () => {
             {/* <h2>Spare Parts page: {parts.length}</h2> */}
 
             <div className='my-16'>
-                <h2 className='text-2xl font-bold text-center mb-20'>Car Parts For Sell</h2>
+                <h2 className='text-2xl font-bold text-center mb-20'>Car Parts For Snell</h2>
 
                 <div className='grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 '>
                     {

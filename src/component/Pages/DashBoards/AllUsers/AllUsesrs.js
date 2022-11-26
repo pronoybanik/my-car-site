@@ -11,22 +11,52 @@ const AllUsesrs = () => {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
 
-                } 
+                }
             });
             const data = await res.json()
             return data
         }
     })
 
+    const handleAdmin = id => {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('Make admin successful')
+                    refetch()
+                }
+            })
+    }
+
+    const handleSeller = id => {
+        fetch(`http://localhost:5000/users/sellers/${id}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('Make admin successful')
+                    refetch()
+                }
+            })
+    }
+
+   
+
     const handleDelete = users => {
         fetch(`http://localhost:5000/users/${users?._id}`, {
             method: 'DELETE',
-            headers: {
-                authorization: `bearer ${localStorage.getItem('accessToken')}`
 
-            }
         })
-
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -49,6 +79,8 @@ const AllUsesrs = () => {
                             <th>Email</th>
                             <th>Specialty</th>
                             <th>Action</th>
+                            <th>Sellers</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +90,15 @@ const AllUsesrs = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>{user.field}</td>
+                                <td>
+                                    {user?.role !== 'admin' && <button onClick={() => handleAdmin(user._id)} className="btn btn-outline btn-info text-white btn-sm" >Add Admin</button>}
+                                </td>
+                                <td>
+                                    { 
+                                     user?.roles !== 'seller' &&
+                                    <button onClick={() => handleSeller(user._id)} className="btn btn-outline btn-success text-white btn-sm" >Add Sellers</button>
+                                    }
+                                </td>
                                 <td>
                                     <button onClick={() => handleDelete(user)} className="btn btn-error text-white btn-sm" >Delete</button>
                                 </td>

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import Loading from '../../Loading/Loading';
 
 const MyOrdare = () => {
 
@@ -20,6 +21,9 @@ const MyOrdare = () => {
             return data;
         }
     })
+    if(isLoading){
+        return <Loading></Loading>
+    }
 
 
     return (

@@ -4,7 +4,7 @@ const ItemParts = ({ part }) => {
     const {condition, image_url, title, location, realprice} = part
     return (
         <div>
-            <div className="card   shadow-xl">
+            <div className="card  h-96 shadow-xl">
                 <figure><img className='h-52' src={image_url} alt="Shoes " /></figure>
                 <div className="card-body">
                     <h2 className="card-title">

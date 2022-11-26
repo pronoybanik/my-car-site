@@ -9,7 +9,9 @@ import SpareParts from "../../Pages/Home/SpareParts/SpareParts";
 import LogIn from "../../Pages/LogIn/LogIn";
 import Main from "../../Pages/Main/Main";
 import SignUp from "../../Pages/SignUP/SignUp";
+import AdminRouter from "../AdminRouter/AdminRouter";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import SellerRouter from "../SellerRouter/SellerRouter";
 
 const router = createBrowserRouter([
     {
@@ -21,22 +23,22 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/spareparts', 
+                path: '/spareparts',
                 element: <SpareParts></SpareParts>
             },
             {
-                path: '/reviews/:id', 
+                path: '/reviews/:id',
                 element: <PrivateRouter><Review></Review></PrivateRouter>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
 
             },
             {
                 path: '/login',
-                element: <LogIn></LogIn> 
+                element: <LogIn></LogIn>
             },
             {
                 path: '/register',
-                element:<SignUp></SignUp>
+                element: <SignUp></SignUp>
             }
 
 
@@ -52,11 +54,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/addproduct',
-                element: <AddProduct></AddProduct>
+                element: <SellerRouter><AddProduct></AddProduct></SellerRouter>
             },
             {
                 path: '/dashboard/allusers',
-                element: <AllUsesrs></AllUsesrs>
+                element: <AdminRouter><AllUsesrs></AllUsesrs></AdminRouter>
             },
         ]
     }
