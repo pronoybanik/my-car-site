@@ -10,7 +10,7 @@ const ServiceItem = ({ data }) => {
                 <figure><img className='w-full h-52' src={image_url} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title ">{title}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p className='font-semibold'>That Products are sale</p>
                     <div className="card-actions justify-center">
                         <Link to={`/reviews/${_id}`}>
                             <button className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white mr-3y">Detail</button>

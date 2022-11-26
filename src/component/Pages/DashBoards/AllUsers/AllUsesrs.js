@@ -89,7 +89,7 @@ const AllUsesrs = () => {
                                 <th>{i + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user.field}</td>
+                                <td className='font-bold'>{user.field}</td>
                                 <td>
                                     {user?.role !== 'admin' && <button onClick={() => handleAdmin(user._id)} className="btn btn-outline btn-info text-white btn-sm" >Add Admin</button>}
                                 </td>

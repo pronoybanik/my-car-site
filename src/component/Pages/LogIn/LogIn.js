@@ -87,11 +87,6 @@ const LogIn = () => {
                         {errors.password && <p className='text-red-800'>{errors.password?.message}</p>}
                     </div>
 
-
-
-
-
-
                     <div>
                         {loginError && <p className='text-red-600 my-2'>{loginError}</p>}
                     </div>
@@ -100,10 +95,7 @@ const LogIn = () => {
                 <p>New to Doctors Portal <Link className='text-secondary' to='/register'>Create a accounts</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogle} className="btn btn-outline w-full">Google LogIn</button>
-
             </div>
-
-
         </div>
     );
 };
