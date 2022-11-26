@@ -3,6 +3,7 @@ import AddProduct from "../../Pages/DashBoards/AddProduct/AddProduct";
 import AllUsesrs from "../../Pages/DashBoards/AllUsers/AllUsesrs";
 import DadhBoardLayOut from "../../Pages/DashBoards/DadhBoardLayOut/DadhBoardLayOut";
 import MyOrdare from "../../Pages/DashBoards/MyOrdare/MyOrdare";
+import ErrorPage from "../../Pages/Home/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
 import Review from "../../Pages/Home/Review/Review";
 import SpareParts from "../../Pages/Home/SpareParts/SpareParts";
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -39,7 +41,8 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <SignUp></SignUp>
-            }
+            },
+            
 
 
         ]
@@ -47,6 +50,7 @@ const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRouter><DadhBoardLayOut></DadhBoardLayOut></PrivateRouter>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/dashboard',

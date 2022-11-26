@@ -10,7 +10,7 @@ const BannerItem = ({slide}) => {
                     </div>
 
                     <div className="absolute  flex justify-end transform -translate-y-1/2 left-64  top-1/3">
-                        <h1 className='font-bold  italic text-white text-6xl'>
+                        <h1 className='sm:text-normal font-bold  italic text-white text-6xl'>
                         Find your next car with us
                         </h1>
                     </div>

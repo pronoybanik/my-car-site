@@ -1,12 +1,12 @@
 import React from 'react';
-import img from '../../../../../images/forced-cooling-promo-still-2.jpg'
+import img from '../../../../../images/70829886-background-blur-of-car-and-showroom-businessmen-blur-in-the-workplace-abstract-blur-background-work-.webp'
 import './BannerTwo.css'
 
 const BannerTwo = () => {
     return (
         <div>
-            <div className=" w-full">
-                    <img  src={img} className=" w-full h-96" alt=''/>
+            <div className=" w-full ">
+                    <img  src={img} className=" edit w-full h-96" alt=''/>
               </div>
         </div>
     );

@@ -11,7 +11,7 @@ const Review = () => {
 
     return (
         <div>
-            <h1>page: {data.sellname} </h1>
+           
             <div className="hero ">
                 <div className="hero-content flex-col lg:flex-row">
 
