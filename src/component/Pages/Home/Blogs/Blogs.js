@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div>
+        <div >
             <div className='grid grid-cols-2 gap-4'>
                 <div className='border-solid border-2 border-sky-500 p-2 broder-round'>
                     <h1 className=' font-bold '>1. What are the different ways to manage a state in a React application?</h1>
@@ -30,6 +30,9 @@ const Blogs = () => {
 
                 </div>
             </div>
+            {/* <div>
+                <h2 className='border-solid border-2 border-sky-500 p-2 broder-round'></h2>
+            </div> */}
         </div>
     );
 };

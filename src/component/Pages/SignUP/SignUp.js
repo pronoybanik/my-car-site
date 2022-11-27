@@ -84,7 +84,7 @@ const SignUp = () => {
 
 
     return (
-        <div className='h-[600px] flex justify-center items-center'>
+        <div className='font-serif h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
                 <h2 className='text-xl text-center'>Sign Up</h2>
                 <form onSubmit={handleSubmit(handleRegister)}>
@@ -132,7 +132,6 @@ const SignUp = () => {
                         >
 
                             <option>user</option>
-                            <option>Admin</option>
                             <option>Byes</option>
                             <option>seller</option>
                         </select>
@@ -145,7 +144,7 @@ const SignUp = () => {
                     </div>
                     <input className='btn w-full' value='sign Up' type="submit" />
                 </form>
-                <p>Already have a account<Link className='text-secondary' to='/login'>Please Login</Link></p>
+                <p>Already have a account:   <Link className='text-secondary' to='/login'>Please Login</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogle} className="btn btn-outline w-full">Google LogIn</button>
 

@@ -44,8 +44,9 @@ const MyOrdare = () => {
 
 
     return (
-        <div >
-            <h2 className='text-1x2 font-bold'>All Order</h2>
+
+        <div className='font-serif'>
+            <h2 className='text-1x2 font-bold text-2xl my-4'>All Order</h2>
 
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">

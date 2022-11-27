@@ -13,11 +13,11 @@ const Review = () => {
         <div>
            
             <div className="hero ">
-                <div className="hero-content flex-col lg:flex-row">
+                <div className="hero-content font-serif flex-col lg:flex-row">
 
                     <figure><img className='w-96' src={image_url} alt="Shoes" /></figure>
                     <div>
-                        <h1 className="text-5xl font-bold">{title}</h1>
+                        <h1 className="text-5xl font-bold ">{title}</h1>
                         <br />
                         <h2 className='font-bold'>seller Name: {sellname}</h2>
                         <h3 >Location: {location}</h3>

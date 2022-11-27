@@ -34,7 +34,7 @@ const LogIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-               
+
             })
             .catch(err => console.error(err))
     }
@@ -46,18 +46,17 @@ const LogIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast.success('Login successful')
-                setLoginUserEmail(data.email)
-                // setLoginUSerEmail(data.email);
+                toast.success('Login successful');
+                setLoginUserEmail(data.email);
             })
             .catch(error => {
-                console.error(error.message)
-                setLoginError(error.message)
+                console.error(error.message);
+                setLoginError(error.message);
 
             })
     }
     return (
-        <div className='h-[600px] flex justify-center items-center'>
+        <div className='font-serif h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
                 <h2 className='text-xl text-center'>Login</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
@@ -92,7 +91,7 @@ const LogIn = () => {
                     </div>
                     <input className='btn w-full' value='Log In' type="submit" />
                 </form>
-                <p>New to Doctors Portal <Link className='text-secondary' to='/register'>Create a accounts</Link></p>
+                <p>New to Doctors Portal: <Link className='text-secondary' to='/register'>Create a accounts</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogle} className="btn btn-outline w-full">Google LogIn</button>
             </div>

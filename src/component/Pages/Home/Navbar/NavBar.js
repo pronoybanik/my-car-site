@@ -24,7 +24,7 @@ const NavBar = () => {
                 <button className="btn btn-secondary text-white ml-2" onClick={handelLogOut}>Log Out</button>
                 :
                 <>
-                    <Link className="btn btn-ghost ml-2" to='/login'>Log In</Link>
+                    <Link className="btn btn-ghost ml-2 " to='/login'>Log In</Link>
                     <Link className="btn btn-ghost ml-2" to='/register'>SignUp</Link>
                 </>
         }
@@ -46,7 +46,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <img src={logo} className='w-12' alt="" />
-                    <Link to='/' className="btn btn-ghost normal-case text-xl font-mono">
+                    <Link to='/' className="btn btn-ghost normal-case text-xl font-serif">
                         CAR LEASE</Link>
                 </div>
 

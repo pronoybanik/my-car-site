@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -21,14 +21,14 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(imgData => {
-                if(imgData.success){
+                if (imgData.success) {
                     console.log(imgData.data.url);
                     const products = {
                         name: data.product,
                         number: data.number,
                         location: data.location,
                         price: data.price,
-                        used:data.use,
+                        used: data.use,
                         photo: imgData.data.url
 
                     }
@@ -43,22 +43,22 @@ const AddProduct = () => {
                         body: JSON.stringify(products)
 
                     })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                        toast.success(`product is added success`)
-                        navigate('/')
-                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            toast.success(`product is added success`)
+                            navigate('/')
+                        })
 
-                    
+
                 }
             })
 
     }
 
     return (
-        <div>
-            <h1 className='text-2xl font-bold'>Add Products</h1>
+        <div className='font-serif'>
+            <h1 className=' text-2xl font-bold my-4'>Add Products</h1>
 
             <div className='h-[600px] flex justify-center items-center'>
                 <div className='w-96 p-7'>
@@ -94,6 +94,9 @@ const AddProduct = () => {
                             <label className="label">
                                 <span className="label-text font-medium">Location</span>
                             </label>
+
+
+
                             <input type="text"
                                 {...register("location", {
                                     required: "Add location",
@@ -105,13 +108,19 @@ const AddProduct = () => {
 
                         <div className="form-control ">
                             <label className="label">
-                                <span className="label-text font-medium">Product use</span>
+                                <span className="label-text font-medium">Which type of car do you want to bye?</span>
                             </label>
-                            <input type="text"
+                            <select className="select select-bordered w-full max-w-xs"
                                 {...register("use", {
                                     required: "Add time",
-                                })}
-                                className="input input-bordered w-full max-w-xs" />
+                                })}                        >
+
+                                <option>New</option>
+                                <option>Second Hand</option>
+                                <option>Reconditioned</option>
+                            </select>
+
+                           
                             {errors.price && <p className='text-red-800'>{errors.price?.message}</p>}
 
                         </div>

@@ -14,7 +14,7 @@ const SpareParts = () => {
     return (
         <div>
             <BannerTwo></BannerTwo>
-                <h2 className='text-4xl font-semibold text-center mb-20'>Buy Car Spare Parts in Bangladesh</h2>
+                <h2 className='text-4xl font-semibold text-center mb-20 font-serif'>Buy Car Spare Parts in Bangladesh</h2>
 
             <div className='my-16'>
 

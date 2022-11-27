@@ -13,7 +13,7 @@ const SellItems = () => {
 
     return (
         <div>
-            <h2 className='text-3xl font-bold my-20  text-center '> These products will be sold</h2>
+            <h2 className='text-3xl font-bold my-20 font-serif text-gray-600 text-center '> These products will be sold</h2>
 
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-28'>
                 {
