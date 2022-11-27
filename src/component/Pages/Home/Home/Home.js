@@ -4,6 +4,7 @@ import DetailCard from '../DetailCard/DetailCard';
 import EmailFild from '../EmailFild/EmailFild';
 import Service from '../Services/Service';
 import SellItems from './SellItems/SellItems';
+import UpdateCar from './UpdateCar/UpdateCar';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Service></Service>
             <DetailCard></DetailCard>
             <SellItems></SellItems>
+            <UpdateCar></UpdateCar>
             <EmailFild></EmailFild>
 
         </div>

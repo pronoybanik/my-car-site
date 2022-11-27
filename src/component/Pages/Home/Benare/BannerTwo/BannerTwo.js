@@ -1,14 +1,13 @@
 import React from 'react';
-import img from '../../../../../images/70829886-background-blur-of-car-and-showroom-businessmen-blur-in-the-workplace-abstract-blur-background-work-.webp'
-import './BannerTwo.css'
+import img from '../../../../../images/forced-cooling-promo-still-2.jpg'
 
 const BannerTwo = () => {
     return (
         <div>
             <div className=" w-full ">
-                    <img  src={img} className=" edit w-full h-96" alt=''/>
-              </div>
-        </div>
+                <img className='blur w-full h-64' src={img} alt="" />
+            </div>
+        </div >
     );
 };
 

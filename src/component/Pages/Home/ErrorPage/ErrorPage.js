@@ -4,7 +4,7 @@ import img from '../../../../images/2267932.webp'
 const ErrorPage = () => {
     return (
         <div>
-            <img src={img} alt="" />
+            <img className='mt-32 w-full' src={img} alt="" />
         </div>
     );
 };
