@@ -17,6 +17,7 @@ const NavBar = () => {
         <Link className="btn btn-ghost" to='/'>Home</Link>
         <Link className="btn btn-ghost" to='/spareparts'>Spare Parts</Link>
         <Link className="btn btn-ghost" to='/dashboard'>Dash Board</Link>
+        <Link className="btn btn-ghost" to='/blogs'>Blog</Link>
 
         {
             user?.email ?

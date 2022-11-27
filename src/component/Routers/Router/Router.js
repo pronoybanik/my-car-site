@@ -3,6 +3,7 @@ import AddProduct from "../../Pages/DashBoards/AddProduct/AddProduct";
 import AllUsesrs from "../../Pages/DashBoards/AllUsers/AllUsesrs";
 import DadhBoardLayOut from "../../Pages/DashBoards/DadhBoardLayOut/DadhBoardLayOut";
 import MyOrdare from "../../Pages/DashBoards/MyOrdare/MyOrdare";
+import Blogs from "../../Pages/Home/Blogs/Blogs";
 import CarDetails from "../../Pages/Home/CarDetails/CarDetails";
 import ErrorPage from "../../Pages/Home/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home/Home";
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
                 element: <CarDetails></CarDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
 
+            },
+            {
+                path: '/blogs',
+                element:<Blogs></Blogs>
             }
 
 
