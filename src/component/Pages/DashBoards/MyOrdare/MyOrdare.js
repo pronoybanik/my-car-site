@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import Loading from '../../Loading/Loading';
 
@@ -10,7 +11,7 @@ const MyOrdare = () => {
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
-    const { data: bookings = [], isLoading , refetch} = useQuery({
+    const { data: bookings = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -59,7 +60,9 @@ const MyOrdare = () => {
                             <th>Email</th>
                             <th>Mobile</th>
                             <th>Location</th>
-                            <th>Button</th>
+                            <th>price</th>
+                            <th>Order cancel</th>
+                            <th>payment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,10 +75,27 @@ const MyOrdare = () => {
                                 <td>{booking.email}</td>
                                 <td>{booking.mobile}</td>
                                 <td>{booking.location}</td>
+                                <td>BDT {booking.sellprice}</td>
+
                                 <td>
-                                    <button  onClick={() => handleDelete(booking)} className='btn btn-error btn-sm text-white'>cancel</button>
+                                    <button onClick={() => handleDelete(booking)} className='btn btn-error btn-sm text-white'>cancel</button>
                                 </td>
-                            </tr>) 
+                                <td>
+                                    {
+                                        booking.sellprice && !booking.paid &&
+                                        <Link to={`/dashboard/payment/${booking._id}`}>
+
+                                            <button className='btn btn-primary btn-sm text-white'>pay</button>
+                                        </Link>
+
+                                    }
+                                    {
+                                        booking.sellprice && booking.paid && <span
+                                            className='btn btn-primary btn-sm text-white'
+                                        >paid</span>
+                                    }
+                                </td>
+                            </tr>)
                         }
 
 

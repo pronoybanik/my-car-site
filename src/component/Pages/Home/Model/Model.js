@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
-const Model = ({ carBooking }) => {
+const Model = ({ carBooking,setCarBooking }) => {
     const { user } = useContext(AuthContext)
 
     const { sellprice, title } = carBooking
@@ -38,7 +38,7 @@ const Model = ({ carBooking }) => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    // setTreatment(null);
+                    setCarBooking(null)
                     toast.success('Booking confirmed')
                     // refetch()
                     
@@ -49,28 +49,7 @@ const Model = ({ carBooking }) => {
 
             })
 
-        // fetch('http://localhost:5000/bookings', {
-        //     method: 'POST',
-        //     headers: {
-        //         'context-type' : 'application/json'
-        //     },
-        //     body: JSON.stringify(list)
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     console.log(data)
-        //     form.reset('')
-        //     if (data.acknowledged) {
-        //         // setTreatment(null);
-        //         toast.success('Booking confirmed')
-                
-                
-        //     }
-        //     else{
-        //       toast.error(data.message)
-        //     }
-             
-        // })
+       
     }
 
 

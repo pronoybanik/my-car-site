@@ -5,7 +5,7 @@ const BannerTwo = () => {
     return (
         <div>
             <div className=" w-full ">
-                <img className='blur w-full h-64' src={img} alt="" />
+                <img className='blur w-full h-60' src={img} alt="" />
             </div>
         </div >
     );

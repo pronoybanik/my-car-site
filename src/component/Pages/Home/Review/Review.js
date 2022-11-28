@@ -11,7 +11,7 @@ const Review = () => {
 
     return (
         <div>
-           
+
             <div className="hero ">
                 <div className="hero-content font-serif flex-col lg:flex-row">
 
@@ -22,10 +22,10 @@ const Review = () => {
                         <h2 className='font-bold'>seller Name: {sellname}</h2>
                         <h3 >Location: {location}</h3>
                         <h2>Uses: {productuse}</h2>
-                        <h2>Market Price: BDT <strong>{realprice}</strong>  </h2>
-                        <h2>selling Price: BDT <strong>{sellprice}</strong></h2>
+                        <h2 >Market Price:  <strong className='text-red-500'>BDT-{realprice}</strong>  </h2>
+                        <h2 >selling Price: <strong className='text-red-500'>BDT-{sellprice}</strong></h2>
 
-                        <label onClick={() => setCarBooking(data)} htmlFor="car-booking" className="btn mt-6">Booking</label>
+                        <label onClick={() => setCarBooking(data)} htmlFor="car-booking" className="btn mt-3 btn-sm">Booking</label>
 
                     </div>
                 </div>
@@ -35,7 +35,7 @@ const Review = () => {
                 carBooking &&
                 <Model
                     carBooking={carBooking}
-
+                    setCarBooking={setCarBooking}
                 ></Model>}
 
         </div>

@@ -24,7 +24,7 @@ const SellItems = () => {
                 }
             </div>
             <div className="card-actions justify-center">
-                <Link className='btn btn-primary bg-gradient-to-r from-primary to-secondary text-white font-bold mt-6 ' to='dashboard/addproduct'> add a prodect to sell</Link>
+                <Link className='btn btn-primary bg-gradient-to-r from-primary to-secondary text-white font-bold mt-10 ' to='dashboard/addproduct'> add a prodect to sell</Link>
             </div>
 
           

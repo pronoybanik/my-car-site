@@ -14,18 +14,18 @@ const NavBar = () => {
     }
 
     const menuBar = <>
-        <Link className="btn btn-ghost" to='/'>Home</Link>
-        <Link className="btn btn-ghost" to='/spareparts'>Spare Parts</Link>
-        <Link className="btn btn-ghost" to='/dashboard'>Dash Board</Link>
-        <Link className="btn btn-ghost" to='/blogs'>Blog</Link>
+        <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/'>Home</Link>
+        <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/spareparts'>Spare Parts</Link>
+        <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/dashboard'>Dash Board</Link>
+        <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/blogs'>Blog</Link>
 
         {
             user?.email ?
-                <button className="btn btn-secondary text-white ml-2" onClick={handelLogOut}>Log Out</button>
+                <button className="font-serif font-bold btn btn-primary bg-gradient-to-r from-primary to-secondary text-white btn-md" onClick={handelLogOut}>Log Out</button>
                 :
                 <>
-                    <Link className="btn btn-ghost ml-2 " to='/login'>Log In</Link>
-                    <Link className="btn btn-ghost ml-2" to='/register'>SignUp</Link>
+                    <Link className="btn btn-ghost font-serif btn-sm mt-2" to='/login'>Log In</Link>
+                    <Link className="btn btn-ghost font-serif btn-sm mt-2" to='/register'>SignUp</Link>
                 </>
         }
 

@@ -61,7 +61,7 @@ const AllUsesrs = () => {
             .then(data => {
                 console.log(data);
                 refetch();
-                toast.success(`Delete doctors ${users?.name}`)
+                toast.success(`Delete Product ${users?.name}`)
             })
     }
 

@@ -12,6 +12,7 @@ import SpareParts from "../../Pages/Home/SpareParts/SpareParts";
 import LogIn from "../../Pages/LogIn/LogIn";
 import Main from "../../Pages/Main/Main";
 import SignUp from "../../Pages/SignUP/SignUp";
+import Payment from "../../Payment/Payment";
 import AdminRouter from "../AdminRouter/AdminRouter";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import SellerRouter from "../SellerRouter/SellerRouter";
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/blogs',
-                element:<Blogs></Blogs>
+                element: <Blogs></Blogs>
             }
 
 
@@ -76,6 +77,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allusers',
                 element: <AdminRouter><AllUsesrs></AllUsesrs></AdminRouter>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <AdminRouter><Payment></Payment></AdminRouter>,
+                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
         ]
     }
