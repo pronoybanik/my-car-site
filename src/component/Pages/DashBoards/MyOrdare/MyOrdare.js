@@ -9,7 +9,7 @@ const MyOrdare = () => {
 
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://car-server-site.vercel.app/bookings?email=${user?.email}`;
 
     const { data: bookings = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -29,7 +29,7 @@ const MyOrdare = () => {
     }
 
     const handleDelete = bookings => {
-        fetch(`http://localhost:5000/bookings/${bookings._id}`, {
+        fetch(`https://car-server-site.vercel.app/bookings/${bookings._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -49,8 +49,8 @@ const MyOrdare = () => {
         <div className='font-serif'>
             <h2 className='text-1x2 font-bold text-2xl my-4'>All Order</h2>
 
-            <div className="overflow-x-auto">
-                <table className="table table-zebra w-full">
+            <div className="overflow-x-auto ">
+                <table className="table table-zebra w-full   ">
 
                     <thead>
                         <tr>
@@ -91,7 +91,7 @@ const MyOrdare = () => {
                                     }
                                     {
                                         booking.sellprice && booking.paid && <span
-                                            className='btn btn-primary btn-sm text-white'
+                                            className='text-black btn btn-link btn-sm'
                                         >paid</span>
                                     }
                                 </td>

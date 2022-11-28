@@ -7,7 +7,7 @@ const AllUsesrs = () => {
     const { data: users, refetch } = useQuery({
         queryKey: ['user'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users', {
+            const res = await fetch('https://car-server-site.vercel.app/users', {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
 
@@ -19,7 +19,7 @@ const AllUsesrs = () => {
     })
 
     const handleAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://car-server-site.vercel.app/users/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const AllUsesrs = () => {
     }
 
     const handleSeller = id => {
-        fetch(`http://localhost:5000/users/sellers/${id}`, {
+        fetch(`https://car-server-site.vercel.app/users/sellers/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -53,7 +53,7 @@ const AllUsesrs = () => {
    
 
     const handleDelete = users => {
-        fetch(`http://localhost:5000/users/${users?._id}`, {
+        fetch(`https://car-server-site.vercel.app/users/${users?._id}`, {
             method: 'DELETE',
 
         })

@@ -12,17 +12,24 @@ const Payment = () => {
 
 
     return (
-        <div className='font-serif'>
-            <h2 className='text-2xl font-bold'>payment: {data.name}</h2>
-            <p >car Price <strong>BDT {sellprice}</strong> Location <strong>{location}</strong>  </p>
+        <div className='font-serif '>
+            <h2 className='text-2xl font-bold mb-6 flex justify-center  text-gray-600'>payment </h2>
 
-           <div className='w-1/2'>
-           <Elements stripe={stripePromise}>
-                <CheckoutForm 
-                data={data}
-                />
-            </Elements>
-           </div>
+            <div className=' flex justify-center items-center mt-12'>
+                <div className=' w-2/3 p-4  border-solid border-2 border-sky-500'>
+                    <p className='my-3'>car Price <strong>BDT {sellprice}</strong> Location <strong>{location}</strong>  </p>
+
+                    <div >
+                        <Elements stripe={stripePromise}>
+                            <CheckoutForm
+                                data={data}
+                            />
+                        </Elements>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     );
 };

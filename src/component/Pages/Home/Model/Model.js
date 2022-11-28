@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Model = ({ carBooking,setCarBooking }) => {
     const { user } = useContext(AuthContext)
-
+   const navigate = useNavigate()
     const { sellprice, title } = carBooking
 
 
@@ -27,7 +28,7 @@ const Model = ({ carBooking,setCarBooking }) => {
         }
         console.log(list);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://car-server-site.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,6 +42,7 @@ const Model = ({ carBooking,setCarBooking }) => {
                     setCarBooking(null)
                     toast.success('Booking confirmed')
                     // refetch()
+                    navigate('/dashboard')
                     
                 }
                 else{

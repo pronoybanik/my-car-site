@@ -25,7 +25,7 @@ const Review = () => {
                         <h2 >Market Price:  <strong className='text-red-500'>BDT-{realprice}</strong>  </h2>
                         <h2 >selling Price: <strong className='text-red-500'>BDT-{sellprice}</strong></h2>
 
-                        <label onClick={() => setCarBooking(data)} htmlFor="car-booking" className="btn mt-3 btn-sm">Booking</label>
+                        <label onClick={() => setCarBooking(data)} htmlFor="car-booking" className=" font-bold btn btn-primary bg-gradient-to-r from-primary to-secondary text-white mt-2 btn-sm">Booking</label>
 
                     </div>
                 </div>

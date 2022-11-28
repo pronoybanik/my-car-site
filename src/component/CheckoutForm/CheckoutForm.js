@@ -9,11 +9,11 @@ const CheckoutForm = ({ data }) => {
     const [transactionId, setTransactionId] = useState('');
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState('');
-    const { sellprice, email, name } = data;
+    const { sellprice, email, name, _id } = data;
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://car-server-site.vercel.app/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const CheckoutForm = ({ data }) => {
             setDisplayError('');
         }
         setSuccess('');
-        setProcessing(true);
+        // setProcessing(true);
         const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -67,11 +67,38 @@ const CheckoutForm = ({ data }) => {
             return;
         }
 
-        // console.log(paymentIntent);
+        console.log(paymentIntent);
 
         if (paymentIntent.status === 'succeeded') {
-            setSuccess('Congrats! your payment completed');
-            setTransactionId(paymentIntent.id);
+            // setSuccess('Congrats! your payment completed');
+            // setTransactionId(paymentIntent.id);
+
+
+            const payment = {
+                sellprice,
+                transactionId: paymentIntent.id,
+                email,
+                bookingId: _id
+            }
+
+            fetch('https://car-server-site.vercel.app/payments', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment)
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.insertedId) {
+                        setSuccess('Congrats! your payment completed');
+                        setTransactionId(paymentIntent.id);
+                    }
+
+                })
         }
         setProcessing(false);
     }

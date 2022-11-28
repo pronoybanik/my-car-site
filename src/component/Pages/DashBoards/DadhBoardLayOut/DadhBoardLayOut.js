@@ -21,7 +21,7 @@ const DadhBoardLayOut = () => {
                 <div className="drawer-side">
                     <label htmlFor="drawer-box" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content font-serif">
-                        <li><Link to='/dashboard'>My appointment</Link></li>
+                        <li className='mb-2'><Link to='/dashboard'>My appointment</Link></li>
                         {
                             sellers &&
                             <>

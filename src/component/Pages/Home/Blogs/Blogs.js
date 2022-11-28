@@ -6,17 +6,17 @@ const Blogs = () => {
             <div className='grid grid-cols-2 gap-4'>
                 <div className='border-solid border-2 border-sky-500 p-2 broder-round'>
                     <h1 className=' font-bold '>1. What are the different ways to manage a state in a React application?</h1>
-                 <ul>
-                    <li>1. Local state</li>
-                    <li>2. Global state</li>
-                    <li>3. Server state</li>
-                    <li>4. URL state</li>
-                    
-                 </ul>
+                    <ul>
+                        <li>1. Local state</li>
+                        <li>2. Global state</li>
+                        <li>3. Server state</li>
+                        <li>4. URL state</li>
+
+                    </ul>
                 </div>
                 <div className='border-solid border-2 border-sky-500 p-2 broder-round'>
                     <div className="font-bold">2.  How does prototypical inheritance work?</div>
-                 <p>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the  of an object, we use Object.</p>
+                    <p>The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the  of an object, we use Object.</p>
                 </div>
 
                 <div className='border-solid border-2 border-sky-500 p-2 broder-round'>
@@ -31,9 +31,15 @@ const Blogs = () => {
 
                 </div>
             </div>
-            {/* <div>
-                <h2 className='border-solid border-2 border-sky-500 p-2 broder-round'></h2>
-            </div> */}
+            <div className='border-solid border-2 mt-3 border-sky-500 p-2 broder-round'>
+                <h1 className='font-bold'>Bullet Point</h1>
+                <p>1- That is photographer site</p>
+                <p>2- i am use tailwind and daisyUi</p>
+                <p>3- jwt are use that site</p>
+                <p>4- you have bye the photo that site</p>
+                <p>5- user only note js</p>
+                <h2>Live link: <strong>https://car-client-site.web.app/blogs</strong> </h2>
+            </div>
         </div>
     );
 };

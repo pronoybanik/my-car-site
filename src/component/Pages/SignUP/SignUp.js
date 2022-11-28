@@ -66,7 +66,7 @@ const SignUp = () => {
     const saveUser = (name, email, field) => {
         const user = { name, email, field };
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://car-server-site.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
