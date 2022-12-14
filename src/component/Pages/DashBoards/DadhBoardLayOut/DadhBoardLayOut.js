@@ -8,7 +8,7 @@ import NavBar from '../../Home/Navbar/NavBar';
 const DadhBoardLayOut = () => {
     const { user } = useContext(AuthContext)
     const [isAdmin] = useAdmin(user?.email)
-    const [sellers] = useSeller(user?.email)
+    const [sellers] = useSeller(user?.email) 
     return (
         <div>
             <NavBar></NavBar>

@@ -3,6 +3,8 @@ import { FaMobileAlt, FaLocationArrow } from "react-icons/fa";
 
 const Pages = ({ item }) => {
     const { location, name, number, photo, price, used } = item;
+
+    
     return (
         <div>
             <div className="card  bg-base-100  h-96 shadow-xl">

@@ -17,6 +17,7 @@ const NavBar = () => {
         <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/'>Home</Link>
         <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/spareparts'>Spare Parts</Link>
         <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/dashboard'>Dash Board</Link>
+        <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/dashboard/addproduct'>add products</Link>
         <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/blogs'>Blog</Link>
 
         {

@@ -20,7 +20,7 @@ const Review = () => {
                         <h1 className="text-5xl font-bold ">{title}</h1>
                         <br />
                         <h2 className='font-bold'>seller Name: {sellname}</h2>
-                        <h3 >Location: {location}</h3>
+                        <h3 >Location: {location}</h3> 
                         <h2>Uses: {productuse}</h2>
                         <h2 >Market Price:  <strong className='text-red-500'>BDT-{realprice}</strong>  </h2>
                         <h2 >selling Price: <strong className='text-red-500'>BDT-{sellprice}</strong></h2>
@@ -36,7 +36,7 @@ const Review = () => {
                 <Model
                     carBooking={carBooking}
                     setCarBooking={setCarBooking}
-                ></Model>}
+                ></Model>} 
 
         </div>
     );

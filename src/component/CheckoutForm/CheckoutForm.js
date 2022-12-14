@@ -9,6 +9,7 @@ const CheckoutForm = ({ data }) => {
     const [transactionId, setTransactionId] = useState('');
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState('');
+    
     const { sellprice, email, name, _id } = data;
 
 

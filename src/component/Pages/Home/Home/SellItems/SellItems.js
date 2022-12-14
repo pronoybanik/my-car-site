@@ -9,7 +9,7 @@ const SellItems = () => {
         fetch('https://car-server-site.vercel.app/products')
             .then(res => res.json())
             .then(data => setItems(data))
-    }, [])
+    }, []);
 
     return (
         <div>
