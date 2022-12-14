@@ -39,7 +39,7 @@ const LogIn = () => {
             })
             .catch(err => console.error(err))
     }
-    
+
     const handleLogin = data => {
         // console.log(data);
         setLoginError('')
@@ -76,7 +76,7 @@ const LogIn = () => {
     return (
         <div className='font-serif h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
-                <h2 className='text-xl text-center'>Login</h2>
+                <h2 className='text-xl text-center'>Login now</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
                     <div className="form-control ">
                         <label className="label">
