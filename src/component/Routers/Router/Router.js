@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/reviews/:id',
                 element: <PrivateRouter><Review></Review></PrivateRouter>,
-                loader: ({ params }) => fetch(`https://car-server-site.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
 
             },
             {
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <CarDetails></CarDetails>,
-                loader: ({ params }) => fetch(`https://car-server-site.vercel.app/update/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
 
             },
             {
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`https://car-server-site.vercel.app/bookings/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
         ]
     }

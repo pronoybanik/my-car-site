@@ -14,13 +14,13 @@ const CheckoutForm = ({ data }) => {
 
 
     useEffect(() => {
-        fetch("https://car-server-site.vercel.app/create-payment-intent", {
+        fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 authoriZation: `bearer ${localStorage.getItem('accessToken')}`
             },
-            body: JSON.stringify({ sellprice }),
+            body: JSON.stringify({ sellprice:sellprice?.replace(',','') }),
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
@@ -82,7 +82,7 @@ const CheckoutForm = ({ data }) => {
                 bookingId: _id
             }
 
-            fetch('https://car-server-site.vercel.app/payments', {
+            fetch('http://localhost:5000/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

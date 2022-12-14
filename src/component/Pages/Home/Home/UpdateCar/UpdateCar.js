@@ -6,7 +6,7 @@ const UpdateCar = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://car-server-site.vercel.app/updatecar')
+        fetch('http://localhost:5000/updatecar')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

@@ -9,7 +9,7 @@ const MyOrdare = () => {
 
     const { user } = useContext(AuthContext);
 
-    const url = `https://car-server-site.vercel.app/bookings?email=${user?.email}`;
+    const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
     const { data: bookings = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -29,7 +29,7 @@ const MyOrdare = () => {
     }
 
     const handleDelete = bookings => {
-        fetch(`https://car-server-site.vercel.app/bookings/${bookings?._id}`, {
+        fetch(`http://localhost:5000/bookings/${bookings?._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

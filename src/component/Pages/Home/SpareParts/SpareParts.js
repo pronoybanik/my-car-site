@@ -7,7 +7,7 @@ const SpareParts = () => {
     const [parts, setParts] = useState([])
 
     useEffect(() => {
-        fetch('https://car-server-site.vercel.app/spare')
+        fetch('http://localhost:5000/spare')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

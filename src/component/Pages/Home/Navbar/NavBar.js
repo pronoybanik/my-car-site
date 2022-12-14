@@ -13,6 +13,8 @@ const NavBar = () => {
             .catch()
     }
 
+    // https://car-server-site.vercel.app
+
     const menuBar = <>
         <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/'>Home</Link>
         <Link className="btn btn-ghost font-sans btn-sm mt-2" to='/spareparts'>Spare Parts</Link>

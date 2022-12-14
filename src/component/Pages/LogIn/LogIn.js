@@ -57,22 +57,7 @@ const LogIn = () => {
             })
     }
 
-    // const handleLogin = data => {
-    //     // console.log(data);
-    //     setLoginError('')
-    //     signIn(data.email, data.password)
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log(user);
-    //             toast.success('Login successful');
-    //             setLoginUserEmail(data.email);
-    //         })
-    //         .catch(error => {
-    //             console.error(error.message);
-    //             setLoginError(error.message);
-
-    //         })
-    // }
+  
     return (
         <div className='font-serif h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
