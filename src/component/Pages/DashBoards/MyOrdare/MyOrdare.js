@@ -10,6 +10,7 @@ const MyOrdare = () => {
     const { user } = useContext(AuthContext);
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    console.log(url);
 
     const { data: bookings = [], isLoading, refetch } = useQuery({
         queryKey: ['bookings', user?.email],

@@ -31,8 +31,9 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                
-               
+                setCreatedUserEmail(user?.email)
+                saveUser(user.displayName, user.email, 'buyer')
+
             })
             .catch(err => console.error(err))
     }
@@ -45,6 +46,7 @@ const SignUp = () => {
                 setSignError('')
                 console.log(user);
                 toast.success('create user successfully')
+                setCreatedUserEmail(user?.email)
                 const userInfo = {
                     displayName: data.name
                 }
@@ -59,7 +61,7 @@ const SignUp = () => {
                 console.error(error);
                 setSignError(error.message)
 
-            })
+            }) 
     }
 
 
@@ -132,9 +134,8 @@ const SignUp = () => {
                             {...register("field", { required: "Email Address is required" })}
                         >
 
-                            <option>user</option>
-                            <option>Byes</option>
-                            <option>seller</option>
+                            <option value='buyer'>Byes</option>
+                            <option value='seller'>seller</option>
                         </select>
 
                     </div>

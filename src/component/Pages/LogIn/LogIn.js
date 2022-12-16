@@ -8,6 +8,8 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 
 
+
+
 const LogIn = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { signIn, googleLogin } = useContext(AuthContext)
@@ -34,7 +36,7 @@ const LogIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                // setLoginUserEmail(user.email)
+                setLoginUserEmail(user?.email)
 
             })
             .catch(err => console.error(err))
@@ -48,7 +50,7 @@ const LogIn = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('Login successful');
-                setLoginUserEmail(data.email);
+                setLoginUserEmail(user?.email);
             })
             .catch(error => {
                 console.error(error.message);
@@ -56,8 +58,8 @@ const LogIn = () => {
 
             })
     }
+    // console.log(token);
 
-  
     return (
         <div className='font-serif h-[600px] flex justify-center items-center'>
             <div className='w-96 p-7'>
@@ -67,7 +69,7 @@ const LogIn = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input className='w-full' type="text"
+                        <input type="text"
                             {...register("email", { required: "Email Address is required" })}
                             className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-800'>{errors.email?.message}</p>}

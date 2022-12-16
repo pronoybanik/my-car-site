@@ -6,6 +6,7 @@ import MyOrdare from "../../Pages/DashBoards/MyOrdare/MyOrdare";
 import Blogs from "../../Pages/Home/Blogs/Blogs";
 import CarDetails from "../../Pages/Home/CarDetails/CarDetails";
 import ErrorPage from "../../Pages/Home/ErrorPage/ErrorPage";
+import FeedBack from "../../Pages/Home/FeedBack/FeedBack";
 import Home from "../../Pages/Home/Home/Home";
 import Review from "../../Pages/Home/Review/Review";
 import SpareParts from "../../Pages/Home/SpareParts/SpareParts";
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Main></Main>,
         errorElement: <ErrorPage></ErrorPage>,
-        children: [ 
+        children: [
             {
                 path: '/',
                 element: <Home></Home>
@@ -81,6 +82,11 @@ const router = createBrowserRouter([
                 element: <Payment></Payment>,
                 loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
+            {
+                path: '/dashboard/feedback',
+                element: <AdminRouter><FeedBack></FeedBack></AdminRouter>,
+                loader: () => fetch('http://localhost:5000/feedback')
+            }
         ]
     }
 ])
